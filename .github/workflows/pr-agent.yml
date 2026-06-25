@@ -1,16 +1,22 @@
 on:
-  pull_request:
-    types: [opened, reopened, ready_for_review]
   issue_comment:
+    types: [created]
+
 jobs:
   pr_agent_job:
-    if: ${{ github.event.sender.type != 'Bot' }}
+    if: |
+      github.event.sender.type != 'Bot' &&
+      github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/') &&
+      (github.event.comment.author_association == 'COLLABORATOR' || github.event.comment.author_association == 'OWNER')
+
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
       contents: write
-    name: Run pr agent on every pull request, respond to user comments
+    name: PR Agent
+
     steps:
       - name: PR Agent action step
         id: pragent
