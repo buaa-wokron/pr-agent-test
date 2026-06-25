@@ -18,7 +18,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-      contents: write
+      contents: read
     name: PR Agent
 
     steps:
