@@ -30,3 +30,6 @@ jobs:
           CONFIG.FALLBACK_MODELS: "['deepseek/deepseek-chat']"
           DEEPSEEK.KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_REVIEWER.ENABLE_REVIEW_LABELS_EFFORT: false
+          PR_REVIEWER.ENABLE_REVIEW_LABELS_SECURITY: false
+
