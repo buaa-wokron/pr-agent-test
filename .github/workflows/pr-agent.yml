@@ -16,7 +16,7 @@ jobs:
         id: pragent
         uses: the-pr-agent/pr-agent@main
         env:
-          CONFIG.MODEL: "deepseek/deepseek-v4-flash"
-          CONFIG.FALLBACK_MODELS: "['deepseek/deepseek-v4-flash']"
+          CONFIG.MODEL: "deepseek/deepseek-chat"
+          CONFIG.FALLBACK_MODELS: "['deepseek/deepseek-chat']"
           DEEPSEEK.KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
